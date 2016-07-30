@@ -9,25 +9,18 @@
 import Foundation
 import UIKit
 class PomorodoroTaskView : UIView{
-    var play : UIButton = UIButton()
-    var label : UILabel?
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        play.setTitle("~~~~~~", forState: UIControlState.Application)
-        label = UILabel(frame: CGRectMake(30, 300, 20, 20))
-        label?.font = UIFont(name:"微软雅黑", size:16)
-        label?.text = "自定义View"
-        label?.textColor = UIColor.orangeColor()
-        self.addSubview(label!)
-        self.addSubview(play)
-        
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @IBOutlet weak var timeLabel : UILabel?
+    @IBOutlet weak var taskInfoLabel : UILabel?
+    
+    
+    func setTimel(timeSeconds : Int){
+        let mins = timeSeconds / 60
+        let seconds = timeSeconds % 60
+        timeLabel!.text = NSString(format: "%02d:%02d", mins,seconds) as String
     }
     
-    override func layoutSubviews(){
-        play.frame = CGRectMake(30, 300, 20, 20)
-       // label.frame = CGRectMake(30, 300, 20, 20)
+    func setTaskInfo(info : String){
+        taskInfoLabel!.text = info
     }
+    
 }

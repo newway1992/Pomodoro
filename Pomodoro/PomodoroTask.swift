@@ -9,7 +9,7 @@
 import Foundation
 class PomodoroTask : NSObject{
     var task : Task?
-    
+
     init(info : String){
         task?.info = info
     }

@@ -9,14 +9,14 @@
 import UIKit
 import Foundation
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var timeLabel: UILabel!
+    //let pomodoroTaskView : PomorodoroTaskView? = PomorodoroTaskView()
+    @IBOutlet var pomodoroTaskView: PomorodoroTaskView!
     var timer:NSTimer?
     var remainSeconds: Int = 0{
         willSet(newValue){
-            let mins = newValue / 60
-            let seconds = newValue % 60
-            timeLabel.text = NSString(format: "%02d:%02d", mins,seconds) as String
+            //timeLabel.text = NSString(format: "%02d:%02d", mins,seconds) as String
+            pomodoroTaskView!.setTimel(newValue)
+            
         }
     }
     var isCounting: Bool! = false{
@@ -35,9 +35,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         remainSeconds = 10
         isCounting = true
-        timeLabel.frame = CGRectMake(10, 40, self.view.bounds.width - 20, 120)
-        let taskView:PomorodoroTaskView = PomorodoroTaskView(frame: CGRectMake(10, 800, self.view.bounds.width - 20, 50))
-        self.view.addSubview(taskView)
+        pomodoroTaskView!.setTaskInfo("吃饭睡觉打豆豆～")
+        //timeLabel.frame = CGRectMake(10, 40, self.view.bounds.width - 20, 120)
     }
 
     override func didReceiveMemoryWarning() {
