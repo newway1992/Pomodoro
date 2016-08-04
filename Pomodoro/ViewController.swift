@@ -9,12 +9,10 @@
 import UIKit
 import Foundation
 class ViewController: UIViewController {
-    //let pomodoroTaskView : PomorodoroTaskView? = PomorodoroTaskView()
     @IBOutlet var pomodoroTaskView: PomorodoroTaskView!
     var timer:NSTimer?
     var remainSeconds: Int = 0{
         willSet(newValue){
-            //timeLabel.text = NSString(format: "%02d:%02d", mins,seconds) as String
             pomodoroTaskView!.setTimel(newValue)
             
         }
@@ -22,7 +20,9 @@ class ViewController: UIViewController {
     var isCounting: Bool! = false{
         willSet(newValue){
             if (newValue == true){
-                timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimer", userInfo: nil, repeats: true)
+                if(timer == nil){
+                     timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimer", userInfo: nil, repeats: true)
+                }
             }
             else{
                 timer!.invalidate()
@@ -33,10 +33,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        remainSeconds = 10
-        isCounting = true
-        pomodoroTaskView!.setTaskInfo("吃饭睡觉打豆豆～")
-        //timeLabel.frame = CGRectMake(10, 40, self.view.bounds.width - 20, 120)
+        pomodoroTaskView!.setTaskInfo("制作番茄工作法app～")
+        pomodoroTaskView!.btnPlay!.addTarget(self, action: "play:", forControlEvents: UIControlEvents.TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,7 +55,9 @@ class ViewController: UIViewController {
         }
     }
     
-    
-
+    @IBAction func play(sender: AnyObject!) {
+        remainSeconds = 10
+        isCounting = true
+    }
 }
 

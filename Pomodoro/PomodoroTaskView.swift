@@ -12,6 +12,9 @@ class PomorodoroTaskView : UIView{
     @IBOutlet weak var timeLabel : UILabel?
     @IBOutlet weak var taskInfoLabel : UILabel?
     
+    @IBOutlet weak var btnPlay: UIButton?
+    @IBOutlet weak var btnPause: UIButton?
+    @IBOutlet weak var btnQuit: UIButton?
     
     func setTimel(timeSeconds : Int){
         let mins = timeSeconds / 60

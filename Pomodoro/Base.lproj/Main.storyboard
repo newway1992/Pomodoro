@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,40 +18,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc4-9V-7fy" userLabel="TimeLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc4-9V-7fy" userLabel="TimeLabel">
                                 <rect key="frame" x="167" y="33" width="266" height="71"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="4Wn-f6-rcL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="任务描述：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-eN-jPj" userLabel="TaskTitleLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="任务描述：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-eN-jPj" userLabel="TaskTitleLabel">
                                 <rect key="frame" x="14" y="132" width="95" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="tPe-bW-491"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dX-hH-kdP" userLabel="TaskInfoLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dX-hH-kdP" userLabel="TaskInfoLabel">
                                 <rect key="frame" x="88" y="161" width="424" height="71"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv3-yL-8rF" userLabel="Quit">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv3-yL-8rF" userLabel="Quit">
                                 <rect key="frame" x="428" y="512" width="72" height="72"/>
                                 <state key="normal" title="Button" image="quit.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pM3-JC-AgY" userLabel="Play">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pM3-JC-AgY" userLabel="Play">
                                 <rect key="frame" x="100" y="512" width="72" height="72"/>
                                 <state key="normal" title="Button" image="play.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTn-Lm-R4b" userLabel="Pause">
-                                <rect key="frame" x="264" y="512" width="72" height="72"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAY-YZ-R1P" userLabel="Pause">
+                                <rect key="frame" x="264" y="508" width="72" height="72"/>
                                 <state key="normal" title="Button" image="pause.png"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zw7-zQ-lJe" firstAttribute="top" secondItem="Fv3-yL-8rF" secondAttribute="bottom" constant="16" id="3Kq-fm-pcZ"/>
+                            <constraint firstItem="1dX-hH-kdP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68" id="67x-Rs-KGl"/>
+                            <constraint firstItem="hc4-9V-7fy" firstAttribute="top" secondItem="5In-ZN-Ob4" secondAttribute="bottom" constant="13" id="9mQ-ii-eVB"/>
+                            <constraint firstItem="mAY-YZ-R1P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="25" id="C28-o1-Ee0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hc4-9V-7fy" secondAttribute="trailing" constant="10" id="Gp7-xa-ggL"/>
+                            <constraint firstItem="1dX-hH-kdP" firstAttribute="top" secondItem="zaR-eN-jPj" secondAttribute="bottom" constant="8" symbolic="YES" id="H4z-fq-cA4"/>
+                            <constraint firstItem="hc4-9V-7fy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="KYp-wB-k7A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1dX-hH-kdP" secondAttribute="trailing" constant="68" id="MZu-Yf-jGW"/>
+                            <constraint firstItem="mAY-YZ-R1P" firstAttribute="trailing" secondItem="Fv3-yL-8rF" secondAttribute="leading" constant="-40" id="Vtf-F6-Lz1"/>
+                            <constraint firstItem="pM3-JC-AgY" firstAttribute="trailing" secondItem="mAY-YZ-R1P" secondAttribute="leading" constant="-40" id="aai-Qk-7kc"/>
+                            <constraint firstItem="zw7-zQ-lJe" firstAttribute="top" secondItem="mAY-YZ-R1P" secondAttribute="bottom" constant="16" id="jJO-q9-bEi"/>
+                            <constraint firstItem="zw7-zQ-lJe" firstAttribute="top" secondItem="pM3-JC-AgY" secondAttribute="bottom" constant="16" id="mBb-0Q-6Vf"/>
+                            <constraint firstItem="zaR-eN-jPj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="t8a-0H-WkE"/>
+                            <constraint firstItem="1dX-hH-kdP" firstAttribute="top" secondItem="hc4-9V-7fy" secondAttribute="bottom" constant="57" id="zNg-p3-i8d"/>
+                        </constraints>
                         <connections>
+                            <outlet property="btnPause" destination="mAY-YZ-R1P" id="mwz-Wh-8Pt"/>
+                            <outlet property="btnPlay" destination="pM3-JC-AgY" id="39M-1P-sAP"/>
+                            <outlet property="btnQuit" destination="Fv3-yL-8rF" id="ROZ-Rb-f13"/>
                             <outlet property="taskInfoLabel" destination="1dX-hH-kdP" id="Qki-Xw-diY"/>
                             <outlet property="timeLabel" destination="hc4-9V-7fy" id="FNQ-si-Nan"/>
                         </connections>
