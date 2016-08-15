@@ -9,6 +9,9 @@
 import UIKit
 import Foundation
 class ViewController: UIViewController {
+    let tomatoImageName = "tomato_done.png"
+    var index : Int = 0
+    //var data:[(string,[int])] = [(tomatoImageName,[])]
     @IBOutlet var pomodoroTaskView: PomorodoroTaskView!
     var timer:NSTimer?
     var remainSeconds: Int = 0{
@@ -46,6 +49,7 @@ class ViewController: UIViewController {
     func updateTimer(){
         remainSeconds -= 1
         if(remainSeconds <= 0){
+            addTomatoImage()
             let alert = UIAlertView()
             self.isCounting = false
             alert.title = alertTitle
@@ -58,6 +62,15 @@ class ViewController: UIViewController {
     @IBAction func play(sender: AnyObject!) {
         remainSeconds = 10
         isCounting = true
+    }
+    
+    let tomatoWidth : CGFloat = 64;
+    let tomatoHeight : CGFloat = 64;
+    func addTomatoImage(){
+        let image = UIImageView(frame: CGRectMake(CGFloat(Float(index)) * tomatoWidth, 300, tomatoWidth, tomatoHeight))
+        image.image = UIImage(named: tomatoImageName)
+        view.addSubview(image)
+        index++
     }
 }
 
